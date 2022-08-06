@@ -1,0 +1,83 @@
+{% extends "normalBase.html.twig" %}
+{% block stylesheets %}<link href="{{ asset('css/pedidos.css') }}" type="text/css" rel="stylesheet" />{% endblock %}
+{% block title %} Pedidos {% endblock %}
+{% block cabecera %}Pedidos{% endblock %}
+{% block javascripts %}<script src="{{ asset('js/pedidos.js') }}"></script>{% endblock %}
+{% block contenido %}
+
+        <section id="articulos" class="seccion">
+            <div id="articulosHeader" class="titulo">
+                <p>Alquileres</p>
+            </div>
+            <div id="bloqueArticulos" >
+            <table>
+                <thead>
+                    <th>idAlquiler</th> <th>fInicio</th> <th>fFinal</th> <th>Articulo</th> <th>Coste</th> <th>Cliente</th>
+                </thead>
+                <tbody>
+                
+                {% for p in allAlquileres %}
+                     <tr class="trAlquiler">
+                        <td class = id>{{p.getIdAlquiler()}}</td>
+                        <td class = tdNombre>{{ p.getFInicio().format('Y-m-d') }}</td>
+                        <td class = tdApellido>{{ p.getFFinal().format('Y-m-d')}}</td>
+                        <td class = tdEmail>{{p.getIdArticulo().getNombre()}}</td>
+                        <td class = tdRol>{{ p.getPrecioTotal()}}</td>
+                        <td class = tdRol>{{p.getIdPedido() ? p.getIdPedido().getDNI_pedido().getDni():''}}</td>
+                        <td class = tdBotonEliminar><button class="botonEliminar">Denegar</button></td>
+                    </tr>
+                    {% dump(p) %}
+                {% endfor %}
+                </tbody>
+            </table>
+            </div>    
+        </section>
+        <section id="articulos" class="seccion">
+            <div id="articulosHeader" class="titulo">
+                <p>Compras</p>
+            </div>
+            <div id="bloqueArticulos" >
+            <table>
+                <thead>
+                    <th>idCompra</th> <th>Articulo</th>  <th>Cliente</th>
+                </thead>
+                <tbody>
+                
+                {% for c in allCompras %}
+                     <tr class="trCompra">
+                        <td class = id>{{c.getIdCompra()}}</td>
+                        <td class = tdNombre>{{ c.getIdArticulo().getNombre()}}</td>
+                        <td class = tdNombre>{{c.getIdPedido() ? c.getIdPedido().getDNI_pedido().getDni():''}}</td>
+                        <td class = tdBotonEliminar><button class="botonEliminar">Denegar</button></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            </div>    
+        </section>
+        <section id="articulos" class="seccion">
+            <div id="articulosHeader" class="titulo">
+                <p>Reparaciones</p>
+            </div>
+            <div id="bloqueArticulos" >
+            <table>
+                <thead>
+                    <th>idReparacion</th> <th>Tipo reparacion</th> <th>Articulo</th> <th>CLiente</th>
+                </thead>
+                <tbody>
+                
+                {% for r in allReparaciones %}
+                     <tr class="trReparacion">
+                        <td class = id>{{r.getIdReparacion()}}</td>
+                        <td class = tdNombre>{{ r.getTipoReparacion() }}</td>
+                        <td class = tdRol>{{r.getIdArticulo().getNombre()}}</td>
+                        <td class = tdNombre>{{r.getIdPedido() ? r.getIdPedido().getDNI_pedido().getDni():''}}</td>
+                        <td class = tdBotonEliminar><button class="botonEliminar">Denegar</button></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            </div>    
+        </section>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "normalBase.html.twig" %}
+{% block stylesheets %}<link href="{{ asset('css/landPageStyle.css') }}" type="text/css" rel="stylesheet" />{% endblock %}
+{% block title %} LandPage {% endblock %}
+{% block cabecera %}LandPage!{% endblock %}
+{% block contenido %}
+<section id="servicios" class="seccion">
+            <div id="serviciosHeader" class="titulo">
+                Accede a nuestros servicios
+            </div>
+            <div id="tipoServicios" >
+                <div id="tipoCompra">
+                    <a href="{{path('compra')}}">Compra</a>
+                    <a href="../php/compra.php"><img id="iconoCompra" src="{{ asset('imagenes/compra.png') }}" alt="icono de compra"></a>
+                </div>
+                <div id="tipoAlquiler">
+                    <a href="../php/alquiler.php">Alquiler</a> 
+                    <a href="../php/alquiler.php"><img id="iconoAlquiler" src="../imagenes/alquiler.png" alt="icono de alquiler"></a>
+                </div>
+                <div id="tipoReparacion">
+                    <a href="../php/reparacion.php">Reparacion</a> 
+                    <a href="../php/reparacion.php"><img id="iconoReparacion" src="../imagenes/arreglos.png" alt="icono de reparaciones"></a>
+                </div>
+            </div>
+        </section>
+        <section id="presentacion" class="seccion"> 
+            <div id="presentacionHeader" class="titulo">
+                Quienes somos
+            </div>
+            <div id="presentacionContent">
+                <p id="textoPresentacion">Somos una empresa fundada en el sur de Suiza, por el maestro de la ebanisteria Finn Muller.
+                    <br><br>    
+                    Desde nuestros inicios hemos ido creciendo y expandiendonos por el mundo pero siempre manteniendo la calidad y el buen hacer de nuestros productos junto con un trato cercano con 
+                    el cliente.
+                </p>
+                <img src="../imagenes/ebanistas-almeria-2.jpg" alt="imagen de ebanista">
+            </div>
+        </section>
+        <section id="contacto" class="seccion">
+            <div id="contactoHeader" class="titulo">
+                Contacto
+            </div>
+            <div id="contactoContent">
+                <div id="instagramContact">
+                    <a href="https://www.instagram.com/?hl=es" target="_blank"><img src="../imagenes/instagram.png" alt="icono instagra"></a>
+                    <a href="https://www.instagram.com/?hl=es" target="_blank">@armar.io</a>
+                </div>
+                <div id="facebookContact">
+                    <a href="https://www.facebook.com/" target="_blank"><img src="../imagenes/facebook.png" alt="icono facebook"></a>
+                    <a href="https://www.facebook.com/" target="_blank">@armar.io</a>
+                </div>
+                <div id="twitterContact">
+                    <a href="https://twitter.com/" target="_blank"><img src="../imagenes/twitter.png" alt="icono twitter"></a>
+                    <a href="https://twitter.com/" target="_blank">@armar.io</a>
+                </div>
+                <div id="emailContact">
+                    <img src="../imagenes/email.png" alt="../icono email">
+                    <span>armar.io@gmail.com</span>
+                </div>
+                
+            </div>
+        </section>
+{% endblock %}
+
+ 

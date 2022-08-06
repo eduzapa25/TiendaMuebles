@@ -1,0 +1,105 @@
+{% extends "normalBase.html.twig" %}
+{% block stylesheets %}<link href="{{ asset('css/compra.css') }}" type="text/css" rel="stylesheet" />{% endblock %}
+{% block title %} Compra {% endblock %}
+{% block cabecera %}Compra{% endblock %}
+{% block contenido %}
+{% set limite = 0 %}
+{% if (app.session.has('user')) and (app.session.get('user') != null) %}
+    {% if (app.session.get('user').getRol() == "admin") or (app.session.get('user').getRol() == "trabajador")%}
+        {% set limite = -1 %}
+    {% endif %}
+{% endif %}
+<div id="zonaFiltros">
+            <form method="post" id="filtroForm">
+                <div class="filtro">
+                    <label for="tipo" id="tipoLable">Tipo</label>
+                    <select name="tipo" id="tipo" class="selector">
+                        <option id="sinSeleccionTipo" value="0" hidden selected>Selecciones el tipo de mueble</option>
+                        <option id="mesa" value="1">Mesa</option>
+                        <option id="silla" value="2">Silla</option>
+                        <option id="armario" value="3">Armario</option>
+                        <option id="allTipos" value="4">Todos</option>
+                    </select>
+                </div>
+                <div class="filtro">
+                    <label for="madera" id="maderaLable">Madera</label>
+                    <select name="madera" id="madera" class="selector">
+                        <option id="sinSeleccionMadera" value="0" hidden selected>Seleccione el tipo de madera</option>
+                        <option id="roble" value="1">Roble</option>
+                        <option id="ebano" value="2">Ebano</option>
+                        <option id="pino" value="3">Pino</option>
+                        <option id="nogal" value="4">Nogal</option>
+                        <option id="allMaderas" value="5">Todos</option>
+                    </select>
+                </div>
+                <div class="filtro">
+                    <label for="color" id="colorLable">Color</label>
+                    <select name="color" id="color" class="selector">
+                        <option id="sinSeleccionColor" value="0" hidden selected>Seleccione el color</option>
+                        <option id="blanco" value="1">Blanco</option>
+                        <option id="claro" value="2">Claro</option>
+                        <option id="oscuro" value="3">Oscuro</option>
+                        <option id="negro" value="4">Negro</option>
+                        <option id="allColores" value="5">Todos</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        
+        
+        <section id="articulos" class="seccion">
+            <div id="articulosHeader" class="titulo">
+                <p>Todos los articulos</p>
+            </div>
+            <div id="bloqueArticulos" >
+                {% for u in allArticles %}
+                    {% if u.getCantidad() > limite %}
+                        <div class="articulo silla nogal claro" >
+                            <div class="contenedorImg">
+                                <img src="../imagenes/silla2.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <span class="nombre">{{ u.getIdArticulo().getNombre()}}</span>
+                                <span class="unidades">{{u.getCantidad()}} unidades</span>
+                                <div class="caracteristicas">
+                                    <span >{{ u.getIdArticulo().getTipo()}}</span>
+                                    <span>{{ u.getIdArticulo().getMadera()}}</span>
+                                    <span>{{ u.getIdArticulo().getMadera()}}</span>
+                                </div>
+                                <span class="precio">{{ u.getIdArticulo().getPrecio()}}$</span>
+                                {% if (app.session.has('user')) and (app.session.get('user') != null) %}
+                                     {% if (app.session.get('user').getRol() == "admin") or (app.session.get('user').getRol() == "trabajador")%}
+                               
+                                        <div class="divModificacion">
+                                            <div id="divBtEliminacion">
+                                                <button calss="btEliminacion" class="btModificacion">Eliminar</button>
+                                            </div>
+                                            <div id="divBtModificacion">
+                                                <input class="cantidadArticulos" name="cantidadArticulos" placeholder="stock">
+                                                <button class="btModificacion" class="btModificacion">Modificar</button>
+                                            </div>
+
+                                        </div>
+                                    {% else %}
+                                        <div class="divBtCompra">
+                                            <button class="btCompra">Comprar</button>
+                                        </div>
+                                    {% endif %}
+                                {% else %}
+                                    <span>Inicie sesion para realizar una compra</span>
+                                {% endif %}
+                                
+                            </div>
+                        </div>
+
+                    {% endif %}
+                {% endfor %}
+                
+            
+
+
+            </div>
+        </section>
+{% endblock %}
+{% block javascripts %}<script src="{{ asset('js/compra.js') }}"></script>{% endblock %}
+ 

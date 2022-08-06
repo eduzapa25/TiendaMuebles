@@ -1,0 +1,28 @@
+{% extends 'formulariosBase.html.twig' %}
+{% block stylesheets %}<link href="{{ asset('css/inicioSesion.css') }}" type="text/css" rel="stylesheet" />{% endblock %}
+{% block title %}Inicio Sesion{% endblock %}
+{% block formularios %}
+    <form method="post" id="formDatos" action="{{path('loginPost')}}">
+        <div id="formEmail">
+            <div class="contenedorLable" id="contenedoremail">
+                <label for="email">E-mail</label>
+                <div id="errorEmail" class="campoError"></div>
+            </div>
+            
+            <input type="text" id="email" name="email" placeholder="Tu direccion e-mail" autocomplete="off">
+        </div>
+        <div id="formPassword">
+            <div class="contenedorLable" >
+                <label for="password">Password</label>
+                <div id="errorPassword" class="campoError"></div>
+            </div>
+            
+            <input type="password" id="password" name="password" placeholder="Escriba su contraseña" autocomplete="off">
+        </div>
+        <div id="botones">
+            <button id="logIn">Log in</button>
+        </div>
+    </form>
+    <button id="registro">Registrarse</button>
+{% endblock %}
+{% block javascripts %}<script src="{{ asset('js/inicioSesion.js') }}"></script>{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'formulariosBase.html.twig' %}
+{% block stylesheets %}<link href="{{ asset('css/registro.css') }}" type="text/css" rel="stylesheet" />{% endblock %}
+{% block title %}Registro{% endblock %}
+{% block formularios %}
+    <form method="post" id="formDatos" action="{{path('createUser')}}">
+                <div id="formNombre" class="campo">
+                    <div class="contenedorLable">
+                        <label for="nombre">Nombre</label>
+                        <div class="campoError" id="errorNombre"></div>
+                    </div>
+                    <input type="text" id="nombre" name="nombre" placeholder="Su nombre">
+                </div>
+                <div id="formApellido" class="campo">
+                    <div class="contenedorLable">
+                        <label for="apellido">Apellido</label>
+                        <div class="campoError" id="errorApellido"></div>
+                    </div>
+                    
+                    <input type="text" id="apellido" name="apellido" placeholder="Escriba su apellido">
+                </div>
+                <div id="formEmail" class="campo">
+                    <div class="contenedorLable">
+                        <label for="email">E-mail</label>
+                        <div class="campoError" id="errorEmail"></div>
+                    </div>
+                    <input type="text" id="email" name="email" placeholder="Tu direccion e-mail">
+                </div>
+                <div id="formDNI" class="campo"> 
+                    <div class="contenedorLable" >
+                        <label for="DNI">DNI</label>
+                        <div class="campoError" id="errorDNI"></div>
+                    </div>
+                    <input type="text" id="DNI" name="DNI" placeholder="Escriba su DNI">
+                </div>
+                <div id="formPassword" class="campo">
+                    <div class="contenedorLable">
+                        <label for="password">Password</label>
+                        <div class="campoError" id="errorPassword"></div>
+                    </div>
+                    <input type="password" id="password" name="password" placeholder="Escriba su contraseña">
+                </div>
+                <button id="registro">Registrarse</button>
+            </form>
+            <div id="botones">
+                <form id="formBoton" method = "post" action="{{path('login')}}">
+                    <div id="bloqueInicioSesion">
+                        <span>¿Ya eres cliente?</span>
+                        <button id="logIn">Log in</button>
+                    </div>
+
+                </form>            
+            </div>
+{% endblock %}
+{% block javascripts %}<script src="{{ asset('js/registro.js') }}"></script>{% endblock %}

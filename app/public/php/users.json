@@ -1,0 +1,18 @@
+[
+    {
+        "nombre": "paco",
+        "apellido": "paco",
+        "email": "paco@gmail.com",
+        "DNI": "11111111A",
+        "password": "b59c67bf196a4758191e42f76670ceba",
+        "rol": "cliente"
+    },
+    {
+        "nombre": "pepe",
+        "apellido": "locooo",
+        "email": "pepe@gmail.com",
+        "DNI": "22222222S",
+        "password": "b59c67bf196a4758191e42f76670ceba",
+        "rol": "admin"
+    }
+]

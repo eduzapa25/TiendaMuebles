@@ -1,0 +1,336 @@
+/* General*/
+
+img{
+    height: 15px;
+    width: 15px;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    
+}
+input{
+    border: none;
+    background-color: #F1EFEF;
+    outline: none;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 6px;
+    margin-right: 25px;
+    color: #373636;
+    width: 200px;
+    text-align: center;
+}
+table{
+    border-collapse: collapse;
+ 
+}
+td{
+    width: 15vw;
+    text-align: center;
+    border-bottom-style: solid;
+    border-color: #F1EFEF;
+    margin-right: 0;
+    margin-left: 0;
+    
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-right-width: 2px;
+    
+}
+th{
+    margin-right: 0;
+    margin-left: 0;
+    border-bottom-style: solid;
+    border-color: #373636;
+
+}
+
+/* menu lateral*/
+
+#menuLateral{
+    color: white;
+    background-color: #2A2A2C;
+    height: 100vh;
+    width: 10vw;
+    position: fixed;
+    
+
+    
+}
+
+#topAside{
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-bottom: 10px;
+    font-size: 28px;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+    border-bottom-width: 3pt;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+#menuLateral a{
+    color: white;
+}
+
+#navServicios{
+    font-size: 18px;
+}
+#navServicios li{
+    margin-top: 15px;
+}
+#navServicios ul{
+    margin-left: -10px;
+}
+#sesiones{
+    position: inherit;
+    bottom: 0px;
+    font-size: 16px;
+    margin-left: -10px;
+}
+#sesiones li{
+    margin-bottom: 10px;
+}
+#usuarios{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#navServicios li:hover{
+    font-size: 24px;
+    font-weight: bold;
+}
+    
+
+#logout{
+    color: white;
+    font-size: 16px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  
+}
+
+
+/*contenido de la pagina*/
+#content{
+    position: absolute;
+    margin-left: 10vw;
+    padding-left: 40px;
+    box-sizing: border-box;
+    width: 90vw;
+}
+#content a{
+    color: unset;
+}
+
+/*Cabecera de ubicacion */
+#cabecera{
+    
+    margin-top: 50px;
+    
+    margin-bottom: 40px;
+    margin-right: 30px;
+    font-size: 20px;
+    background-color: #F8F8F8;
+    padding-left:30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+/*Filtros*/
+
+#filtroForm{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    
+  
+}
+
+.selector{
+    margin-left: 30px;
+}
+.sekector label{
+    margin-right: 10px;
+}
+.selector select{
+    background-color: #F1EFEF;
+    border-style: none;
+    height: 30px;
+    border-radius: 5px;
+    width: 200px;
+    color:#373636;
+    font-weight: lighter;
+}
+#filtroForm button{
+    margin-left: 30px;
+    background-color: #3c3c3d;
+    border-style: none;
+    height: 30px;
+    border-radius: 5px;
+    width: 60px;
+    color:white;
+    font-weight: lighter;
+}
+
+
+
+/*Zona de articulos*/
+
+#botonAdd{
+    margin-bottom: 10px;
+    margin-left: 30px;
+    background-color: #3c3c3d;
+    border-style: none;
+    height: 30px;
+    border-radius: 5px;
+    width: 60px;
+    color:white;
+    font-weight: lighter;
+    
+}
+#contenedorAddUsuario{
+    border-bottom-style: solid;
+    border-color: #2A2A2C;
+    margin-right: 35px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+
+}
+#buscarUsuario{
+    margin-bottom: 20px;
+}
+
+.titulo{
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+.seccion{
+    margin-top: 10px;
+}
+
+.articulo{
+    background-color: #F1EFEF;
+    
+    width: 450px;
+    height: 180px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+ 
+    
+}
+#bloqueArticulos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1500px;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 40px;
+    
+}
+.articulo img{
+    height: 130px;
+    width: 130px;
+    
+
+}
+.info{
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.contenedorImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+.nombre{
+    font-size: 24px;
+    margin-top: 0px;
+    text-transform: uppercase;
+}
+.precio{
+    font-size: 24px;
+}
+.caracteristicas{
+    font-size: 15px;
+    margin-bottom: 25px;
+    margin-top: 5px;
+}
+.caracteristicas span{
+    margin-right: 5px;
+}
+.divBtCompra{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btCompra{
+    height: 30px;
+    background-color: #3c3c3d;
+    border-style: none;
+    color: white;
+    font-weight: lighter;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    border-radius: 15px;
+    width: 100px;
+    margin-top: 15px;
+}
+#errores{
+    margin-left: 15px;
+    font-size: 12px;
+    color: rgb(160, 64, 64);
+    margin-top: 5px;
+}
+
+.tdBotonModificar{
+    width: 100px;
+    text-align: right;
+    margin-left: 30px;
+}
+.tdBotonEliminar{
+    width: 100px;
+    text-align: center;
+    margin-left: 30px;
+}
+tr button{
+   
+    
+    background-color: #3c3c3d;
+    border-style: none;
+    height: 30px;
+    border-radius: 5px;
+    width: 80px;
+    color:white;
+    font-weight: lighter;
+}
+
+
+
+

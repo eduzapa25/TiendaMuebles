@@ -1,0 +1,136 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+   
+    font-size: 20px;
+    color: white;
+    background-color: #1B1B1B;
+}
+
+#marcoPrincipal{
+    margin-top: 7vh;
+    margin-left: 35vw;
+    position: absolute;
+    height: 920px;
+    width: 610px;
+    background-color: #2A2A2C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+#titulo{
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+/*formulario*/
+.campo{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    
+}
+
+.contenedorLable{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.campoError{
+    margin-left: 15px;
+    font-size: 13px;
+    color: rgb(160, 64, 64);
+    margin-top: 5px;
+}
+.campo input{
+    background-color: #2A2A2C;
+    border-style: none;
+    border-bottom-style: solid;
+    width: 300px;
+    height: 30px;
+    color: white;
+}
+
+
+#formularios{
+    margin-top: 20px;
+}
+/*
+#formEmail{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+#formEmail label{
+    margin-bottom: 20px;
+}
+#formEmail input{
+    background-color: #2A2A2C;
+    border-style: none;
+    border-bottom-style: solid;
+    width: 300px;
+    height: 30px;
+    color: white;
+}
+
+#formPassword{
+    display: flex;
+    flex-direction: column;
+}
+#formPassword input{
+    background-color: #2A2A2C;
+    border-style: none;
+    border-bottom-style: solid;
+    width: 300px;
+    height: 30px;
+    color: white;
+}
+#formPassword label{
+    margin-bottom: 20px;
+}
+*/
+
+/*botones*/
+
+#botones{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    
+}
+#registro{
+    margin-top: 40px;
+    width: 300px;
+    height: 60px;
+    border-radius: 30px;
+    border-style: none;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #2A2A2C;
+    
+}
+#registro:active{
+    background-color: #aaaaaf;
+}
+#logIn{
+    width: 300px;
+    font-weight: lighter;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #2A2A2C;
+    border-style: none;
+    color: white;
+    
+}
+#bloqueInicioSesion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+}
+
+

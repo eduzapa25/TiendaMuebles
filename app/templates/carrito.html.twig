@@ -1,0 +1,89 @@
+{% extends "normalBase.html.twig" %}
+{% block stylesheets %}<link href="{{ asset('css/pedidos.css') }}" type="text/css" rel="stylesheet" />{% endblock %}
+{% block title %} Carrito {% endblock %}
+{% block cabecera %}Carrito{% endblock %}
+{% block contenido %}
+    {% if (app.session.has('alquiler') or (app.session.has('compra')) or (app.session.has('reparacion')))%}
+        <div>
+            <form action={{path('realizarPago')}}>
+                <button>Realizar Pago</button>
+            </form>
+        </div>
+    {% endif %}
+     <section id="articulos" class="seccion">
+            <div id="articulosHeader" class="titulo">
+                <p>Alquileres</p>
+            </div>
+            <div id="bloqueArticulos" >
+            <table>
+                <thead>
+                    <th>Producto</th> <th>fInicio</th> <th>fFinal</th> <th>Coste</th>
+                </thead>
+                <tbody>
+                
+                {% for p in app.session.get('alquiler') %}
+                     <tr class="trAlquiler">
+                        <td class = id>{{p.getIdArticulo().getNombre()}}</td>
+                        <td class = tdNombre>{{ p.getFInicio().format('Y-m-d')}}</td>
+                        <td class = tdApellido>{{ p.getFFinal().format('Y-m-d')}}</td>
+                        <td class = tdEmail>{{p.getPrecioTotal()}}</td>
+                    </tr>
+                    {% dump(p) %}
+                {% endfor %}
+                </tbody>
+            </table>
+            </div>    
+        </section>
+
+        <section id="articulos" class="seccion">
+            <div id="articulosHeader" class="titulo">
+                <p>Compras</p>
+            </div>
+            <div id="bloqueArticulos" >
+            <table>
+                <thead>
+                    <th>Producto</th> <th>Madera</th> <th>Color</th> <th>Coste</th>
+                </thead>
+                <tbody>
+                
+                {% for p in app.session.get('compra') %}
+                     <tr class="trCompra">
+                        <td class = id>{{p.getIdArticulo().getNombre()}}</td>
+                        <td class = tdNombre>{{ p.getIdArticulo().getMadera()}}</td>
+                        <td class = tdApellido>{{ p.getIdArticulo().getColor()}}</td>
+                        <td class = tdEmail>{{p.getIdArticulo().getPrecio()}}</td>
+                    </tr>
+                    {% dump(p) %}
+                {% endfor %}
+                </tbody>
+            </table>
+            </div>    
+        </section>
+
+        <section id="articulos" class="seccion">
+            <div id="articulosHeader" class="titulo">
+                <p>Reparacion</p>
+            </div>
+            <div id="bloqueArticulos" >
+            <table>
+                <thead>
+                    <th>Producto</th> <th>Reparacion</th> <th>Coste</th>
+                </thead>
+                <tbody>
+                
+                {% for p in app.session.get('reparacion') %}
+                     <tr class="trCompra">
+                        <td class = id>{{p.getIdArticulo().getNombre()}}</td>
+                        <td class = tdNombre>{{ p.getTipoReparacion()}}</td>
+                        <td class = tdApellido>{{ p.getIdArticulo().getPrecio()*0.5}}</td>
+                    </tr>
+                    {% dump(p) %}
+                {% endfor %}
+                </tbody>
+            </table>
+            </div>    
+        </section>
+        
+{% endblock %}
+
+ 

@@ -1,0 +1,80 @@
+{% extends 'formulariosBase.html.twig' %}
+{% block stylesheets %}<link href="{{ asset('css/editProfile.css') }}" type="text/css" rel="stylesheet" />{% endblock %}
+{% block title %}Editar Perfil{% endblock %}
+{% block formularios %}
+    <form method="post" id="formDatos" action="{{path('editUsuario')}}">
+
+                <div id=bloqueInputs>
+                    <div id=bloque1>
+                        <div id="formNombre" class="campo">
+                            <div class="contenedorLable">
+                                <label for="nombre">Nombre</label>
+                                <div class="campoError" id="errorNombre"></div>
+                            </div>
+                            <input type="text" id="nombre" name="nombre" placeholder={{app.session.get('user').getNombre()}} value = {{app.session.get('user').getNombre()}}>
+                        </div>
+                        <div id="formApellido" class="campo">
+                            <div class="contenedorLable">
+                                <label for="apellido">Apellido</label>
+                                <div class="campoError" id="errorApellido"></div>
+                            </div>
+                            
+                            <input type="text" id="apellido" name="apellido" placeholder={{app.session.get('user').getApellido()}} value = {{app.session.get('user').getApellido()}}>
+                        </div>
+                        <div id="formEmail" class="campo">
+                            <div class="contenedorLable">
+                                <label for="email">E-mail</label>
+                                <div class="campoError" id="errorEmail"></div>
+                            </div>
+                            <input type="text" id="email" name="email" placeholder={{app.session.get('user').getEmail()}} value = {{app.session.get('user').getEmail()}}>
+                        </div>
+                        <div id="formDNI" class="campo"> 
+                            <div class="contenedorLable" >
+                                <label for="DNI">DNI</label>
+                                <div class="campoError" id="errorDNI"></div>
+                            </div>
+                            <input type="text" id="DNI" name="DNI" placeholder={{app.session.get('user').getDNI()}} value = {{app.session.get('user').getDNI()}}>
+                        </div>
+                    </div>
+
+                    <div id=bloque2>
+                        <div id="formPassword" class="campo">
+                            <div class="contenedorLable">
+                                <label for="password">Password</label>
+                                <div class="campoError" id="errorPassword"></div>
+                            </div>
+                            <input type="password" id="password" name="password" placeholder="Escriba su nueva contraseña">
+                        </div>
+
+
+                        <div id="formTarjeta" class="campo">
+                            <div class="contenedorLable">
+                                <label for="tarjeta">Tarjeta</label>
+                                <div class="campoError" id="errorTarjeta"></div>
+                            </div>
+                            <input type="text" id="tarjeta" name="tarjeta" placeholder="Escriba su tarjeta de credito">
+                        </div>
+                        <div id="formTelefono" class="campo">
+                            <div class="contenedorLable">
+                                <label for="telefono">Telefono</label>
+                                <div class="campoError" id="errorTelefono"></div>
+                            </div>
+                            <input type="text" id="telefono" name="telefono" placeholder="Escriba su telefono de contacto">
+                        </div>
+                        <div id="formDireccion" class="campo">
+                            <div class="contenedorLable">
+                                <label for="direccion">Direccion</label>
+                                <div class="campoError" id="errorDireccion"></div>
+                            </div>
+                            <input type="text" id="direccion" name="direccion" placeholder="Escriba su direccion de envio">
+                        </div>
+                    </div> 
+                </div>
+               
+                
+                
+                <button id="registro">Actualizar</button>
+            </form>
+
+{% endblock %}
+{% block javascripts %}<script src="{{ asset('js/editProfile.js') }}"></script>{% endblock %}
